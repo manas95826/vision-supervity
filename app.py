@@ -1,14 +1,9 @@
 import streamlit as st
 from openai import OpenAI
 import os
-
-# Set OpenAI API key
-os.environ["OPENAI_API_KEY"] = "sk-formanas-HAa5ntPi5XvOa0B2QpwTT3BlbkFJz4fYVfwl8inxMenGKluJ"
-
+openai_api_key = st.secrets["openai_api_key"]
 # Initialize OpenAI client
-client = OpenAI()
-
-
+client = OpenAI(api_key=openai_api_key)
 
 # Streamlit app
 st.title("Image and Query Input for OpenAI")
